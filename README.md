@@ -38,8 +38,12 @@ bfs_degrees_of_separation(): This function runs bfs on a graph from a starting n
 graph_degrees_of_separation(): This function uses bfs_degrees_of_separation() and uses a for loop to run on all nodes. It keeps track of how many paths are larger than 6 and prints out the number and ratio to all paths. 
 
 Output
-470/1508312569 = 0.0000 paths between nodes are greater than 6
-This data shows us that pretty much 0% of paths are greater than 6. 
+1. 470/1508312569 = 0.0000 paths between nodes are greater than 6
+2. 753/1508312569 = 0.0000 paths between nodes are greater than 6
+3. 462/1508312569 = 0.0000 paths between nodes are greater than 6
+4. 661/1508312569 = 0.0000 paths between nodes are greater than 6
+5. 492/1508312569 = 0.0000 paths between nodes are greater than 6
+After running this 5 different times, the data shows that pretty much 0% of paths are greater than 6.
 
 What this could tell us:
 This means six degrees of separation does not do well to describe this graph. This may mean that a lot of these products are not of the same category of product and that they do not often go together as co-purchasing items. Amazon may want to suggest more similar products if they would like this feature to bring them more sales, or otherwise create a new feature. 
