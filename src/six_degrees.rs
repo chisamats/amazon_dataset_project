@@ -11,10 +11,10 @@ pub fn out_degree_adj_list(graph: &Vec<(usize, usize)>) -> HashMap<usize, Vec<us
     }
 
     let keys: Vec<usize> = adj_list.keys().cloned().collect();
-    let half_len = keys.len() / 10;
+    let tenth_len = keys.len() / 10;
 
     let mut part_adj_list: HashMap<usize, Vec<usize>> = HashMap::new();
-    for i in 0..half_len {
+    for i in 0..tenth_len {
         if let Some(key) = keys.get(i) {
             if let Some(value) = adj_list.get(key) {
                 part_adj_list.insert(*key, value.clone());
