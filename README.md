@@ -31,9 +31,9 @@ This information could help Amazon decide whether it is worth having this featur
 
 
 Six Degrees of Separation
-Separate from the degree distribution, I also wanted to see if this dataset also fell within the six degrees of separation rule. Because this dataset is so large, for the six degrees of separation, I used the first 40,072 of the nodes which is 1/10th of all nodes.
+Separate from the degree distribution, I also wanted to see if this dataset also fell within the six degrees of separation rule. Because this dataset is so large, for the six degrees of separation, I used 40,072 of the nodes which is 1/10th of all nodes.
 
-out_degree_adj_list(): This function takes the from-node/to-node graph that was made initially from reading the file in main and turns it into an out degree adjacency list with the first 1/10th of all nodes. 
+out_degree_adj_list(): This function takes the from-node/to-node graph that was made initially from reading the file in main and turns it into an out degree adjacency list with 1/10th of all nodes. 
 bfs_degrees_of_separation(): This function runs bfs on a graph from a starting node to all its neighbors. 
 graph_degrees_of_separation(): This function uses bfs_degrees_of_separation() and uses a for loop to run on all nodes. It keeps track of how many paths are larger than 6 and prints out the number and ratio to all paths. 
 
