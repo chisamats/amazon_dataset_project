@@ -1,7 +1,9 @@
 Amazon Product Co-purchasing Network Project Writeup
-The dataset I worked on was an Amazon product co-purchasing network from March 12 2003. The description says, “Network was collected by crawling the Amazon website. It is based on Customers Who Bought This Item Also Bought feature of the Amazon website. If a product i is frequently co-purchased with product j, the graph contains a directed edge from i to j.” 
 
+The dataset I worked on was an Amazon product co-purchasing network from March 12 2003. The description says, “Network was collected by crawling the Amazon website. It is based on Customers Who Bought This Item Also Bought feature of the Amazon website. If a product i is frequently co-purchased with product j, the graph contains a directed edge from i to j.” 
 I chose this dataset because I am a frequent user of Amazon and I am curious to see how effective the certain features of the website are in selling more products to users. I personally look at the “Customers Who Bought This Item Also Bought” feature but I do not often actually buy anything from that category. There is also a lot of data to work with because Amazon is a big site with a large amount of users. 
+
+
 Power Law Fit
 I wanted to see whether this network followed a power law fit as many networks do. This would mean that some products are very well connected with others, or that those products are commonly bought with other products using the Customers Who Bought This Item Also Bought feature, while most products are not as connected and probably only bought with one other product commonly. 
 
@@ -11,7 +13,6 @@ degree_distribution(): This function takes the in degree graph made from read_fi
 top_five(): This function takes the in degree graph and puts it into vector form to be able to sort the nodes by number of incoming edges. It takes the top five nodeswith the most number of incoming edges and put that information into a Vec<usize, usize> of product node number and number of other products it was co-purchased with which gets returned. 
 bottom(): This function also takes the in degree graph and puts it into vector form. However, we sort this from least to greatest number of incoming edges. Because there are very many nodes that only have 1 product it has been co-purchased with, instead of taking the bottom five, this function finds out how many products have only been co-purchased with 1 other product using the for loop and an if statement, storing the number of this type of product in a variable called count. Count gets returned at the end. 
 build_chart(): This part builds a degree distribution plot on a log log scale to be able to see the power law fit easier as it is more linear. We use the minimum and maximum values of the degree distribution HashMap’s degrees and frequencies to set the lengths of the axes. The data points get put into (degree, frequency) format and plotted as black dots on the graph. 
-
 
 Graph
 The graph follows the power law fit that we had predicted for it with many products having very few co-purchased products (upper left side of graph) and a few products with many co-purchased products (bottom right corner). 
@@ -27,6 +28,8 @@ This tells us that 62,552 products were bought with only 1 other item through th
 
 What this could tell us:
 This information could help Amazon decide whether it is worth having this feature as so many items only get co-purchased with 1 other item. Maybe other features that will have customers adding more to their cart or a different algorithm for this feature would help get more items being purchased together. 
+
+
 Six Degrees of Separation
 Separate from the degree distribution, I also wanted to see if this dataset also fell within the six degrees of separation rule. Because this dataset is so large, for the six degrees of separation, I used the first 40,072 of the nodes which is 1/10th of all nodes.
 
